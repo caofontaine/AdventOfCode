@@ -22,8 +22,9 @@ fs.readFile('./input.txt', (err, data) => {
 
       for (let x = command.x1; x <= command.x2; x++) {
         for (let y = command.y1; y <= command.y2; y++) {
-          let index = 1000 * x + y;=
+          let index = 1000 * x + y;
 
+          // Why lightGrid[index]++ and lightGrid[index]-- doesn't produce correct answer?
           if (command.command === 'turn on') ++lightGrid[index];
           if (command.command === 'turn off') lightGrid[index] = lightGrid[index] === 0 ? 0 : --lightGrid[index];
           if (command.command === 'toggle') lightGrid[index] += 2;
